@@ -17,5 +17,10 @@ export const navigation = [
         path: '/tasks'
       }
     ]
+  },
+  {
+    text: 'Home Pokedex',
+    path: '/pages/home-pokedex',
+    icon: 'folder'
   }
 ];

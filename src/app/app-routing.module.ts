@@ -6,8 +6,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { HomePokedexComponent } from './pages/home-pokedex/home-pokedex.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/home-pokedex',
+    component: HomePokedexComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'tasks',
     component: TasksComponent,
@@ -56,7 +62,8 @@ const routes: Routes = [
   declarations: [
     HomeComponent,
     ProfileComponent,
-    TasksComponent
+    TasksComponent,
+    HomePokedexComponent
   ]
 })
 export class AppRoutingModule { }

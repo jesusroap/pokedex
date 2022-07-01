@@ -1,0 +1,12 @@
+<h2 class="content-block">Home Pokedex</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">Put your content here</div>
+    <ul>
+        <li *ngForOf="let item of pokemons">
+            {{item.name}}
+        </li>
+    </ul>
+    
+
+    <!-- <div><img src="{{image}}" alt=""></div> -->
+</div>
