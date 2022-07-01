@@ -7,6 +7,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { HomePokedexComponent } from './pages/home-pokedex/home-pokedex.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   {
@@ -56,9 +58,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, BrowserModule],
   providers: [AuthGuardService],
-  exports: [RouterModule],
+  exports: [RouterModule, CommonModule],
   declarations: [
     HomeComponent,
     ProfileComponent,

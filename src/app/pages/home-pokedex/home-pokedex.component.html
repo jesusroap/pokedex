@@ -1,11 +1,15 @@
 <h2 class="content-block">Home Pokedex</h2>
 <div class="content-block">
     <div class="dx-card responsive-paddings">Put your content here</div>
-    <ul>
-        <li *ngForOf="let item of pokemons">
-            {{item.name}}
-        </li>
-    </ul>
+
+    <table>
+        <tbody>
+            <tr *ngFor="let item of pokemons; let i =index">
+               <td>{{item.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
     
 
     <!-- <div><img src="{{image}}" alt=""></div> -->

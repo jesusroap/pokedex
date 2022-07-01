@@ -8,18 +8,17 @@ import { Pokemon } from '../models/pokemon';
 })
 export class PokedexService {
 
-  //private url = "https://pokeapi.co/api/v2/pokemon/ditto"
-  private url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+  private url = "https://pokeapi.co/api/v2"
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getPokemons(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.url)
+  getPokemon(): Observable<Pokemon> {
+    return this.http.get<Pokemon[]>(`${this.url}/pokemon/ditto`)
   }
 
   getAllPokemons(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(this.url)
+    return this.http.get<Pokemon[]>(`${this.url}/pokemon?limit=10&offset=0`)
   }
 }

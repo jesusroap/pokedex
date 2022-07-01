@@ -9,7 +9,7 @@ import { PokedexService } from 'src/app/service/pokedex.service';
 })
 export class HomePokedexComponent implements OnInit {
 
-  public pokemons:any[] = []
+  pokemons:any[] = []
   image:any
 
   constructor(
@@ -22,7 +22,7 @@ export class HomePokedexComponent implements OnInit {
   }
 
   getPokemon() {
-    this.service.getPokemons().subscribe((data:any) => {
+    this.service.getPokemon().subscribe((data:any) => {
       //this.pokemons = data
       this.image = data.sprites.front_default
       console.log(data.sprites.front_default)
@@ -34,7 +34,7 @@ export class HomePokedexComponent implements OnInit {
   getPokemons() {
     this.service.getAllPokemons().subscribe((data:any) => {
       this.pokemons = data.results
-      console.log(data)
+      console.log(data.results)
     })
   }
 
