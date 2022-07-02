@@ -8,7 +8,7 @@ import { PokedexService } from 'src/app/service/pokedex.service';
   styleUrls: ['./home-pokedex.component.scss']
 })
 export class HomePokedexComponent implements OnInit {
-
+  namePokemon!:string;
   pokemons:any[] = []
   pokemonsAllDetails:any[] = []
   image:any
@@ -37,4 +37,12 @@ export class HomePokedexComponent implements OnInit {
       })
     }
   }
+
+  search(){
+    this.service.getPokemonName(this.namePokemon).subscribe((data:Pokemon) => {
+      this.pokemonsAllDetails = []
+      this.pokemonsAllDetails.push(data)
+    })
+  }
+
 }

@@ -8,7 +8,7 @@ export interface IUser {
 
 const defaultPath = '/';
 const defaultUser = {
-  email: 'sandra@example.com',
+  email: 'pokedex@dw.com',
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png'
 };
 

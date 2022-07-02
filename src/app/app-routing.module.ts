@@ -5,11 +5,13 @@ import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { HomePokedexComponent } from './pages/home-pokedex/home-pokedex.component';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { PokemonComponent } from './pages/pokemon/pokemon.component';
+import { FormsModule } from '@angular/forms';
+import { DxTextBoxModule } from 'devextreme-angular';
 
 const routes: Routes = [
   {
@@ -64,7 +66,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, BrowserModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, BrowserModule,FormsModule,DxButtonModule,DxTextBoxModule],
   providers: [AuthGuardService],
   exports: [RouterModule, CommonModule],
   declarations: [

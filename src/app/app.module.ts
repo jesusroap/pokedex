@@ -25,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginFormModule,
     UnauthenticatedContentModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [
     AuthService,
