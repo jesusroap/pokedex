@@ -10,6 +10,7 @@ import { PokedexService } from 'src/app/service/pokedex.service';
 export class HomePokedexComponent implements OnInit {
 
   pokemons:any[] = []
+  pokemonsAllDetails:any[] = []
   image:any
 
   constructor(
@@ -17,18 +18,8 @@ export class HomePokedexComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getPokemon()
-    this.getPokemons()
-  }
-
-  getPokemon() {
-    this.service.getPokemon().subscribe((data:any) => {
-      //this.pokemons = data
-      this.image = data.sprites.front_default
-      console.log(data.sprites.front_default)
-      console.log(data)
-
-    })
+    this.getAllDetailsPokemons(10)
+    console.log(this.pokemonsAllDetails)
   }
 
   getPokemons() {
@@ -38,4 +29,12 @@ export class HomePokedexComponent implements OnInit {
     })
   }
 
+  getAllDetailsPokemons(number:number) {
+    let data = this.service.getAllDetailsPokemons(number)
+    for (let item of data) {
+      item.subscribe(data => {
+        this.pokemonsAllDetails.push(data)
+      })
+    }
+  }
 }

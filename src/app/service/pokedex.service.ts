@@ -14,11 +14,23 @@ export class PokedexService {
     private http: HttpClient
   ) { }
 
-  getPokemon(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(`${this.url}/pokemon/ditto`)
+  getPokemonId(id:number): Observable<any> {
+    return this.http.get<any>(`${this.url}/pokemon/${id}`)
   }
 
-  getAllPokemons(): Observable<Pokemon> {
-    return this.http.get<Pokemon[]>(`${this.url}/pokemon?limit=10&offset=0`)
+  getPokemonName(name:string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(`${this.url}/pokemon/${name}`)
+  }
+
+  getAllPokemons(): Observable<any> {
+    return this.http.get<any[]>(`${this.url}/pokemon?limit=10&offset=0`)
+  }
+
+  getAllDetailsPokemons(number:number) {
+    var array = [];
+    for (let i = 1; i <= number; i++) {
+      array.push(this.getPokemonId(i))
+    }
+    return array
   }
 }

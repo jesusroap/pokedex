@@ -9,10 +9,16 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { HomePokedexComponent } from './pages/home-pokedex/home-pokedex.component';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
 
 const routes: Routes = [
   {
-    path: 'pages/home-pokedex',
+    path: 'pokemon',
+    component: PokemonComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'home',
     component: HomePokedexComponent,
     canActivate: [ AuthGuardService ]
   },
@@ -27,7 +33,7 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'home',
+    path: 'home-alternate',
     component: HomeComponent,
     canActivate: [ AuthGuardService ]
   },
@@ -65,7 +71,8 @@ const routes: Routes = [
     HomeComponent,
     ProfileComponent,
     TasksComponent,
-    HomePokedexComponent
+    HomePokedexComponent,
+    PokemonComponent
   ]
 })
 export class AppRoutingModule { }
