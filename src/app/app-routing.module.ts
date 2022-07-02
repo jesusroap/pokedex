@@ -6,8 +6,22 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { HomePokedexComponent } from './pages/home-pokedex/home-pokedex.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { PokemonComponent } from './pages/pokemon/pokemon.component';
 
 const routes: Routes = [
+  {
+    path: 'pokemon',
+    component: PokemonComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'home',
+    component: HomePokedexComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'tasks',
     component: TasksComponent,
@@ -19,7 +33,7 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'home',
+    path: 'home-alternate',
     component: HomeComponent,
     canActivate: [ AuthGuardService ]
   },
@@ -50,13 +64,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), DxDataGridModule, DxFormModule, BrowserModule],
   providers: [AuthGuardService],
-  exports: [RouterModule],
+  exports: [RouterModule, CommonModule],
   declarations: [
     HomeComponent,
     ProfileComponent,
-    TasksComponent
+    TasksComponent,
+    HomePokedexComponent,
+    PokemonComponent
   ]
 })
 export class AppRoutingModule { }

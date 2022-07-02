@@ -1,0 +1,33 @@
+<h2 class="content-block">Pokedex</h2>
+<div class="content-block">
+    <div class="dx-card responsive-paddings">TODO: Filter</div>
+</div>
+
+<div>
+    <div class="slide-container">
+  
+        <div *ngFor="let item of pokemonsAllDetails; let i =index" class="wrapper">
+          <div class="clash-card {{item.name}}">
+            <div class="clash-card__image clash-card__image--{{item.name}}">
+              <a routerLink="/pokemon" [queryParams]="{name:item.name}" routerLinkActive="router-link-active" >
+                <img src="{{item.sprites.other.home.front_default}}" alt="{{item.name}}" />
+              </a>
+            </div>
+            <div class="clash-card__level clash-card__level--{{item.name}}">Level {{item.base_experience}}</div>
+            <div class="clash-card__unit-name">{{item.name.charAt(0).toUpperCase() + item.name.slice(1)}}</div>
+            <br>
+      
+            <div class="clash-card__unit-stats clash-card__unit-stats--{{item.name}} clearfix">
+                
+              <div *ngFor="let ability of item.abilities" class="one-third">
+                <div class="stat">{{ability.ability.name}}</div>
+                <!-- <div class="stat-value">Speed</div> -->
+              </div>
+      
+            </div>
+      
+          </div> <!-- end clash-card {{item.name}}-->
+        </div> <!-- end wrapper -->
+        
+    </div> <!-- end container -->
+</div>

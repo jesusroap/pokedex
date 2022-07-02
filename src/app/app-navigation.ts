@@ -4,18 +4,28 @@ export const navigation = [
     path: '/home',
     icon: 'home'
   },
+  // {
+  //   text: 'Examples',
+  //   icon: 'folder',
+  //   items: [
+  //     {
+  //       text: 'Profile',
+  //       path: '/profile'
+  //     },
+  //     {
+  //       text: 'Tasks',
+  //       path: '/tasks'
+  //     }
+  //   ]
+  // },
+  // {
+  //   text: 'Pokedex',
+  //   path: '/pages/home-pokedex',
+  //   icon: 'folder'
+  // },
   {
-    text: 'Examples',
-    icon: 'folder',
-    items: [
-      {
-        text: 'Profile',
-        path: '/profile'
-      },
-      {
-        text: 'Tasks',
-        path: '/tasks'
-      }
-    ]
+    text: 'Pokemon',
+    path: '/pokemon',
+    icon: 'folder'
   }
 ];

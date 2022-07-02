@@ -1,0 +1,28 @@
+<h2 class="content-block">{{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}}</h2>
+
+<div>
+    <div class="slide-container">
+  
+        <div class="wrapper">
+          <div class="clash-card {{pokemon.name}}">
+            <div class="clash-card__image clash-card__image--{{pokemon.name}}">
+                <img src="{{pokemon.sprites.other.home.front_default}}" alt="{{pokemon.name}}" />
+            </div>
+            <div class="clash-card__level clash-card__level--{{pokemon.name}}">Level {{pokemon.base_experience}}</div>
+            <div class="clash-card__unit-name">{{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}}</div>
+            <br>
+      
+            <div class="clash-card__unit-stats clash-card__unit-stats--{{pokemon.name}} clearfix">
+                
+              <div *ngFor="let ability of pokemon.abilities" class="one-third">
+                <div class="stat">{{ability.ability.name}}</div>
+                <!-- <div class="stat-value">Speed</div> -->
+              </div>
+      
+            </div>
+      
+          </div> <!-- end clash-card {{pokemon.name}}-->
+        </div> <!-- end wrapper -->
+        
+    </div> <!-- end container -->
+</div>
