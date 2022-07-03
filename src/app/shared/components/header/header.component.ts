@@ -49,6 +49,10 @@ export class HeaderComponent implements OnInit {
   toggleMenu = () => {
     this.menuToggle.emit();
   }
+
+  goToHome() {
+    this.router.navigate(["/home"])
+  }
 }
 
 @NgModule({

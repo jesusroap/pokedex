@@ -23,9 +23,9 @@ export const navigation = [
   //   path: '/pages/home-pokedex',
   //   icon: 'folder'
   // },
-  // {
-  //   text: 'Pokemon',
-  //   path: '/pokemon',
-  //   icon: 'folder'
-  // }
+  {
+    text: 'Pokemon',
+    path: '/pokemon',
+    icon: 'folder'
+  }
 ];

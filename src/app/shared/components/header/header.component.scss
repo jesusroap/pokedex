@@ -30,6 +30,11 @@
   margin: 0;
 }
 
+.header-title-2 {
+  color: $base-accent;
+  cursor: pointer;
+}
+
 :host-context(.dx-theme-generic) {
   .dx-toolbar {
     padding: 10px 0;

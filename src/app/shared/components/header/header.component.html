@@ -15,7 +15,11 @@
       location="before"
       cssClass="header-title"
       *ngIf="title"
-      [text]="title">
+      [text]="title"
+    >
+      <a class="header-title-2" (click)="goToHome()">
+        Pokedex
+      </a>
     </dxi-item>
     <dxi-item
       location="after"

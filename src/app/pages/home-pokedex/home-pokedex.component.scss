@@ -4,6 +4,7 @@ $ivysaur: #EE5487;
 $venusaur: #F6901A;
 $charmander: #82BB30;
 $charmeleon: #4FACFF;
+$base-accent: #cc0e2a;
 
 .slide-container {
   margin: auto;
@@ -17,7 +18,7 @@ $charmeleon: #4FACFF;
 .wrapper {
   padding-top: 40px;
   padding-bottom: 40px;
-  
+
   &:focus {
     outline: 0;
   }
@@ -41,13 +42,21 @@ $charmeleon: #4FACFF;
   margin-bottom: 35px;
   border-top-left-radius: $border-radius-size;
   border-top-right-radius: $border-radius-size;
+
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
+  img {
+    width: 350px;
+    position: absolute;
+    top: -100px;
+    left: -30px;
+  }
 }
 
 .clash-card__image--bulbasaur {
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
   img {
     width: 350px;
-    position: absolute;    
+    position: absolute;
     top: -100px;
     left: -30px;
   }
@@ -57,7 +66,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
   img {
     width: 350px;
-    position: absolute;    
+    position: absolute;
     top: -90px;
     left: -37px;
   }
@@ -67,7 +76,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/barbarian-bg.jpg');
   img {
     width: 400px;
-    position: absolute;    
+    position: absolute;
     top: -130px;
     left: -50px;
   }
@@ -77,7 +86,7 @@ $charmeleon: #4FACFF;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
   img {
     width: 350px;
-    position: absolute;    
+    position: absolute;
     top: -90px;
     left: -10px;
   }
@@ -87,7 +96,7 @@ $charmeleon: #4FACFF;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
   img {
     width: 370px;
-    position: absolute;    
+    position: absolute;
     top: -90px;
     left: -10px;
   }
@@ -97,7 +106,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg');
     img {
       width: 400px;
-      position: absolute;    
+      position: absolute;
       top: -120px;
       left: -40px;
     }
@@ -107,7 +116,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
     img {
       width: 350px;
-      position: absolute;    
+      position: absolute;
       top: -90px;
       left: -10px;
     }
@@ -117,7 +126,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
     img {
       width: 370px;
-      position: absolute;    
+      position: absolute;
       top: -90px;
       left: -30px;
     }
@@ -127,7 +136,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg');
     img {
       width: 370px;
-      position: absolute;    
+      position: absolute;
       top: -100px;
       left: -10px;
     }
@@ -137,7 +146,7 @@ $charmeleon: #4FACFF;
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg');
     img {
       width: 345px;
-      position: absolute;    
+      position: absolute;
       top: -90px;
       left: -10px;
     }
@@ -148,6 +157,7 @@ $charmeleon: #4FACFF;
   font-size: 12px;
   font-weight: 700;
   margin-bottom: 3px;
+  color: $venusaur;
 }
 
 .clash-card__level--bulbasaur {
@@ -197,86 +207,6 @@ $charmeleon: #4FACFF;
   margin-bottom: 5px;
 }
 
-.clash-card__unit-stats--bulbasaur {
-  background: $venusaur;
-  
-  .one-third {
-    border-right: 1px solid darken($venusaur, 8%);
-  }
-}
-
-.clash-card__unit-stats--ivysaur {
-  background: $venusaur;
-  
-  .one-third {
-    border-right: 1px solid darken($venusaur, 8%);
-  }
-}
-
-.clash-card__unit-stats--venusaur {
-  background: $venusaur;
-  
-  .one-third {
-     border-right: 1px solid darken($venusaur, 8%);
-  }
-}
-
-.clash-card__unit-stats--charmander {
-  background: $charmander;
-  
-  .one-third {
-     border-right: 1px solid darken($charmander, 6%);
-  }
-}
-
-.clash-card__unit-stats--charmeleon {
-  background: $charmander;
-  
-  .one-third {
-     border-right: 1px solid darken($charmander, 6%);
-  }
-}
-
-.clash-card__unit-stats--charizard {
-    background: $charmander;
-    
-    .one-third {
-       border-right: 1px solid darken($charmander, 6%);
-    }
-}
-
-.clash-card__unit-stats--squirtle {
-    background: $charmeleon;
-    
-    .one-third {
-       border-right: 1px solid darken($charmeleon, 6%);
-    }
-}
-
-.clash-card__unit-stats--wartortle {
-    background: $charmeleon;
-    
-    .one-third {
-       border-right: 1px solid darken($charmeleon, 6%);
-    }
-}
-
-.clash-card__unit-stats--blastoise {
-    background: $charmeleon;
-    
-    .one-third {
-       border-right: 1px solid darken($charmeleon, 6%);
-    }
-}
-
-.clash-card__unit-stats--caterpie {
-    background: $ivysaur;
-    
-    .one-third {
-       border-right: 1px solid darken($ivysaur, 6%);
-    }
-}
-
 .clash-card__unit-stats {
   display: flex;
   justify-content: center;
@@ -284,8 +214,10 @@ $charmeleon: #4FACFF;
   font-weight: 700;
   border-bottom-left-radius: $border-radius-size;
   border-bottom-right-radius: $border-radius-size;
-  
+  background: $venusaur;
+
   .one-third {
+    border-right: 1px solid darken($venusaur, 8%);
     width: 100%;
     float: left;
     padding: 10px 5px;
@@ -294,21 +226,21 @@ $charmeleon: #4FACFF;
   .one-third:last-child {
     border-right: none;
   }
-  
+
   sup {
     position: absolute;
-    bottom: 4px; 
+    bottom: 4px;
     font-size: 45%;
     margin-left: 2px;
   }
-  
+
   .stat {
     position: relative;
     font-size: 14px;
     // margin-bottom: 10px;
     text-transform: uppercase
   }
-  
+
   .stat-value {
     text-transform: uppercase;
     font-weight: 400;
@@ -320,7 +252,116 @@ $charmeleon: #4FACFF;
   }
 }
 
+.clash-card__unit-stats--bulbasaur {
+  background: $venusaur;
 
+  .one-third {
+    border-right: 1px solid darken($venusaur, 8%);
+  }
+}
+
+.clash-card__unit-stats--ivysaur {
+  background: $venusaur;
+
+  .one-third {
+    border-right: 1px solid darken($venusaur, 8%);
+  }
+}
+
+.clash-card__unit-stats--venusaur {
+  background: $venusaur;
+
+  .one-third {
+     border-right: 1px solid darken($venusaur, 8%);
+  }
+}
+
+.clash-card__unit-stats--charmander {
+  background: $charmander;
+
+  .one-third {
+     border-right: 1px solid darken($charmander, 6%);
+  }
+}
+
+.clash-card__unit-stats--charmeleon {
+  background: $charmander;
+
+  .one-third {
+     border-right: 1px solid darken($charmander, 6%);
+  }
+}
+
+.clash-card__unit-stats--charizard {
+    background: $charmander;
+
+    .one-third {
+       border-right: 1px solid darken($charmander, 6%);
+    }
+}
+
+.clash-card__unit-stats--squirtle {
+    background: $charmeleon;
+
+    .one-third {
+       border-right: 1px solid darken($charmeleon, 6%);
+    }
+}
+
+.clash-card__unit-stats--wartortle {
+    background: $charmeleon;
+
+    .one-third {
+       border-right: 1px solid darken($charmeleon, 6%);
+    }
+}
+
+.clash-card__unit-stats--blastoise {
+    background: $charmeleon;
+
+    .one-third {
+       border-right: 1px solid darken($charmeleon, 6%);
+    }
+}
+
+.clash-card__unit-stats--caterpie {
+    background: $ivysaur;
+
+    .one-third {
+       border-right: 1px solid darken($ivysaur, 6%);
+    }
+}
+
+a {
+  text-decoration: none;
+}
+
+.dx-field-value {
+  width: 90% !important;
+}
+
+.btn-pokemons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-poke {
+  z-index: 10;
+}
+
+.btn-filter {
+  margin-left: 1rem;
+}
+
+.btn-actions {
+  width: 40%;
+  margin: auto;
+}
+
+.btn-refresh {
+  background-color: $base-accent;
+}
 
 .clearfix:after {
 	visibility: hidden;

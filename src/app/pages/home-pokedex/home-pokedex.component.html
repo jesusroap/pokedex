@@ -2,45 +2,63 @@
 
 <div class="content-block">
 
-    <div class="dx-card responsive-paddings">      
-      <div class="dx-field">        
-        <div class="dx-field-value">
-          <dx-text-box placeholder="Nombre del Pokemon" value="namePokemon" [showClearButton]="true" [(ngModel)]="namePokemon"></dx-text-box>         
-        </div>
-      </div>      
-      <dx-button text="Filtrar" stylingMode="contained" type="success"
-        (onClick)="search()">
-      </dx-button>        
+    <div class="dx-card responsive-paddings">
+
+      <dx-form
+        colCount="2"
+        [minColWidth]="500">
+
+        <dxi-item>
+          <div class="dx-field" >
+            <div class="dx-field-value" >
+              <dx-text-box placeholder="Nombre del Pokemon" value="namePokemon" [(ngModel)]="namePokemon" [showClearButton]="true" (keyup.enter)="searchPokemon()"></dx-text-box>
+            </div>
+            <dx-button class="btn-poke btn-filter" icon="search" stylingMode="contained" type="success"
+            (onClick)="searchPokemon()">
+            </dx-button>
+          </div>
+        </dxi-item>
+
+        <dxi-item class="btn-pokemons">
+          <dx-button class="btn-poke btn-actions btn-refresh" icon="refresh" text="¡Sorpréndeme!" stylingMode="contained" type="success"
+            (onClick)="refreshPokemon()">
+          </dx-button>
+          <dx-button class="btn-poke btn-actions btn-your-pokemon" icon="favorites" text="¡Tú pokemon!" stylingMode="contained" type="success"
+            (onClick)="yourPokemon()">
+          </dx-button>
+        </dxi-item>
+
+      </dx-form>
     </div>
 
 </div>
 
 <div>
   <div class="slide-container">
-    
+
     <div *ngFor="let item of pokemonsAllDetails; let i =index" class="wrapper">
       <div class="clash-card {{item.name}}">
-        <div class="clash-card__image clash-card__image--{{item.name}}">        
+        <div class="clash-card__image clash-card__image--{{item.name}}">
           <img src="{{item.sprites.other.home.front_default}}" alt="{{item.name}}" />
         </div>
         <div class="clash-card__level clash-card__level--{{item.name}}">Level {{item.base_experience}}</div>
-        
+
         <a routerLink="/pokemon" [queryParams]="{name:item.name}" routerLinkActive="router-link-active" >
           <div class="clash-card__unit-name">{{item.name.charAt(0).toUpperCase() + item.name.slice(1)}}</div>
         </a>
         <br>
-  
+
         <div class="clash-card__unit-stats clash-card__unit-stats--{{item.name}} clearfix">
-            
+
           <div *ngFor="let ability of item.abilities" class="one-third">
             <div class="stat">{{ability.ability.name}}</div>
             <!-- <div class="stat-value">Speed</div> -->
           </div>
-  
+
         </div>
-  
+
       </div> <!-- end clash-card {{item.name}}-->
     </div> <!-- end wrapper -->
-      
+
   </div> <!-- end container -->
 </div>

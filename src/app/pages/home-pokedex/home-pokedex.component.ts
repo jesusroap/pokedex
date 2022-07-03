@@ -14,7 +14,7 @@ export class HomePokedexComponent implements OnInit {
   image:any
 
   constructor(
-    private service: PokedexService 
+    private service: PokedexService
   ) { }
 
   ngOnInit(): void {
@@ -38,8 +38,35 @@ export class HomePokedexComponent implements OnInit {
     }
   }
 
-  search(){
-    this.service.getPokemonName(this.namePokemon).subscribe((data:Pokemon) => {
+  searchPokemon() {
+    if (this.namePokemon != "" && this.namePokemon != null) {
+      this.service.getPokemonName(this.namePokemon).subscribe((data:Pokemon) => {
+        this.pokemonsAllDetails = []
+        this.pokemonsAllDetails.push(data)
+      })
+    } else {
+      this.pokemonsAllDetails = []
+      this.getAllDetailsPokemons(10)
+    }
+  }
+
+  getRandomInt(max:number) {
+    return Math.floor(Math.random() * max);
+  }
+
+  refreshPokemon() {
+    this.pokemonsAllDetails = []
+    for (let i = 1; i <= 10; i++) {
+      let id:number = this.getRandomInt(50)
+      this.service.getPokemonId(id).subscribe(data => {
+        this.pokemonsAllDetails.push(data)
+      })
+    }
+  }
+
+  yourPokemon() {
+    let id:number = this.getRandomInt(50)
+    this.service.getPokemonId(id).subscribe(data => {
       this.pokemonsAllDetails = []
       this.pokemonsAllDetails.push(data)
     })

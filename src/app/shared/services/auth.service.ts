@@ -9,7 +9,7 @@ export interface IUser {
 const defaultPath = '/';
 const defaultUser = {
   email: 'pokedex@dw.com',
-  avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png'
+  avatarUrl: 'https://st2.depositphotos.com/1323882/11739/i/600/depositphotos_117390316-stock-photo-pokemon-ball-isolated-on-white.jpg'
 };
 
 @Injectable()

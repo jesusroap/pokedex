@@ -37,7 +37,11 @@ export class PokemonComponent implements OnInit {
     private router: Router
   ) {
     let url = this.router.parseUrl(this.router.url);
-    this.pokemonName = url.queryParams['name']
+    if (url.queryParams['name']) {
+      this.pokemonName = url.queryParams['name']
+    } else {
+      this.pokemonName = "bulbasaur"
+    }
   }
 
   ngOnInit(): void {
