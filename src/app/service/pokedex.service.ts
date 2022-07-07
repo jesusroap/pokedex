@@ -25,12 +25,4 @@ export class PokedexService {
   getAllPokemons(): Observable<any> {
     return this.http.get<any[]>(`${this.url}/pokemon?limit=10&offset=0`)
   }
-
-  getAllDetailsPokemons(number:number) {
-    var array = [];
-    for (let i = 1; i <= number; i++) {
-      array.push(this.getPokemonId(i))
-    }
-    return array
-  }
 }

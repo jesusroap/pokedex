@@ -20,12 +20,8 @@
         </dxi-item>
 
         <dxi-item class="btn-pokemons">
-          <dx-button class="btn-poke btn-actions btn-refresh" icon="refresh" text="¡Sorpréndeme!" stylingMode="contained" type="success"
-            (onClick)="refreshPokemon()">
-          </dx-button>
-          <dx-button class="btn-poke btn-actions btn-your-pokemon" icon="favorites" text="¡Tú pokemon!" stylingMode="contained" type="success"
-            (onClick)="yourPokemon()">
-          </dx-button>
+          <app-random-pokemons class="btn-poke btn-actions"></app-random-pokemons>
+          <app-your-pokemon class="btn-poke btn-actions"></app-your-pokemon>
         </dxi-item>
 
       </dx-form>

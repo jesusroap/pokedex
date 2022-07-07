@@ -346,21 +346,16 @@ a {
   align-items: center;
 }
 
-.btn-poke {
-  z-index: 10;
-}
-
 .btn-filter {
   margin-left: 1rem;
 }
 
-.btn-actions {
-  width: 40%;
-  margin: auto;
+.btn-poke {
+  z-index: 10;
 }
 
-.btn-refresh {
-  background-color: $base-accent;
+.btn-actions {
+  margin: auto;
 }
 
 .clearfix:after {

@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokedexService } from 'src/app/service/pokedex.service';
 import { Pokemon } from 'src/app/models/pokemon';
+import { Store } from '@ngrx/store';
+
+interface AppSate {
+  count: number
+}
 
 @Component({
   selector: 'app-pokemon',
@@ -30,11 +35,13 @@ export class PokemonComponent implements OnInit {
       },
     }
   }
+  test: string = ""
 
   constructor(
     private service: PokedexService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private store: Store<AppSate>
   ) {
     let url = this.router.parseUrl(this.router.url);
     if (url.queryParams['name']) {
@@ -42,6 +49,9 @@ export class PokemonComponent implements OnInit {
     } else {
       this.pokemonName = "bulbasaur"
     }
+    this.store.subscribe( state => {
+      this.test = state.count.toString()
+    })
   }
 
   ngOnInit(): void {

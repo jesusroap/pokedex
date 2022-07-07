@@ -8,6 +8,8 @@ import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { pokemonReducer } from './reducers/pokemon.reducer';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     UnauthenticatedContentModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    StoreModule.forRoot({ data: pokemonReducer }),
+
   ],
   providers: [
     AuthService,

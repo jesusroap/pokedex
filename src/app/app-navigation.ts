@@ -27,5 +27,20 @@ export const navigation = [
     text: 'Pokemon',
     path: '/pokemon',
     icon: 'folder'
-  }
+  },
+  // {
+  //   text: 'Search Pokemon',
+  //   path: '/pages/search-pokemon',
+  //   icon: 'folder'
+  // },
+  // {
+  //   text: 'Random Pokemons',
+  //   path: '/pages/random-pokemons',
+  //   icon: 'folder'
+  // },
+  // {
+  //   text: 'Your Pokemon',
+  //   path: '/pages/your-pokemon',
+  //   icon: 'folder'
+  // }
 ];

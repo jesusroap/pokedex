@@ -12,8 +12,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PokemonComponent } from './pages/pokemon/pokemon.component';
 import { FormsModule } from '@angular/forms';
 import { DxTextBoxModule } from 'devextreme-angular';
+import { SearchPokemonComponent } from './pages/search-pokemon/search-pokemon.component';
+import { RandomPokemonsComponent } from './pages/random-pokemons/random-pokemons.component';
+import { YourPokemonComponent } from './pages/your-pokemon/your-pokemon.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/your-pokemon',
+    component: YourPokemonComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/random-pokemons',
+    component: RandomPokemonsComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'pages/search-pokemon',
+    component: SearchPokemonComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pokemon',
     component: PokemonComponent,
@@ -74,7 +92,10 @@ const routes: Routes = [
     ProfileComponent,
     TasksComponent,
     HomePokedexComponent,
-    PokemonComponent
+    PokemonComponent,
+    SearchPokemonComponent,
+    RandomPokemonsComponent,
+    YourPokemonComponent
   ]
 })
 export class AppRoutingModule { }
